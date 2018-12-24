@@ -8,8 +8,8 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  global.stickybits = factory();
-}(typeof self !== 'undefined' ? self : this, function () { 'use strict';
+  (global = global || self, global.stickybits = factory());
+}(this, function () { 'use strict';
 
   /*
     STICKYBITS 💉
@@ -379,7 +379,7 @@
       }
 
       var isStickyChange = scroll >= change && scroll <= stop;
-      var isNotStickyChange = scroll < change || scroll > stop;
+      var isNotStickyChange = scroll < change / 2 || scroll > stop;
       var stub = 'stub'; // a stub css class to remove
 
       if (isNotStickyChange) {

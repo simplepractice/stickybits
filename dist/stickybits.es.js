@@ -373,7 +373,7 @@ function () {
     }
 
     var isStickyChange = scroll >= change && scroll <= stop;
-    var isNotStickyChange = scroll < change || scroll > stop;
+    var isNotStickyChange = scroll < change / 2 || scroll > stop;
     var stub = 'stub'; // a stub css class to remove
 
     if (isNotStickyChange) {
